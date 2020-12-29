@@ -8,7 +8,7 @@ ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__)
     app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
     app.config.from_mapping(
         SECRET_KEY=b'\xa1\xbb\xaa\xbe\x15\xa2\x97\x8ccf\xdePsO"\xdc',
