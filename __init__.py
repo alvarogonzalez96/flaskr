@@ -39,3 +39,7 @@ def create_app(test_config=None):
     app.add_url_rule('/', endpoint='index')
     
     return app
+
+@app.route('/')
+def home():
+    return render_template('blog/home.html')
