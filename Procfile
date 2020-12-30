@@ -1,1 +1,1 @@
-web: gunicorn __init__:create_app
+web: gunicorn --bind 127.0.0.1:8000 __init__:create_app
