@@ -21,13 +21,13 @@ def create_app(self, test_config=None):
     except OSError:
         pass
 
-    from flaskr import db
+    from flaskr.db import init_app
     db.init_app(app)
 
-    from . import auth
+    from flaskr.auth import register_blueprint
     app.register_blueprint(auth.bp)
 
-    from . import blog
+    from flaskr.blog import register_blueprint, add_url_rule
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
