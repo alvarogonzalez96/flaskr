@@ -14,12 +14,6 @@ ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
-    # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
-
     from . import db
     db.init_app(app)
 
@@ -30,4 +24,3 @@ ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
-    return app
