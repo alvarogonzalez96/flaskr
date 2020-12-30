@@ -21,7 +21,7 @@ def create_app(self, test_config=None):
     except OSError:
         pass
 
-    from . import db
+    from flaskr import db
     db.init_app(app)
 
     from . import auth
