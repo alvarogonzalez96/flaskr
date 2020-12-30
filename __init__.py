@@ -6,7 +6,7 @@ UPLOAD_FOLDER = os.path.abspath("./flaskr/static/images/")
 
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
 
-app = create_app(test_config=None):
+def = create_app(self, test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -38,4 +38,4 @@ app = create_app(test_config=None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
-  
+    return app
