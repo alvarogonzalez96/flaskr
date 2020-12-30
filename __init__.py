@@ -32,4 +32,4 @@ def create_app(self, test_config=None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
-    app.run();
+    return app
