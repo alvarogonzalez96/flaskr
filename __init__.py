@@ -2,6 +2,7 @@ import os
 
 from flask import Flask
 
+
 UPLOAD_FOLDER = os.path.abspath("./flaskr/static/images/")
 
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
@@ -24,7 +25,7 @@ def create_app(self, test_config=None):
     from db import init_app
     init_app(app)
 
-    from auth import register_blueprint
+    import auth
     app.register_blueprint(auth.bp)
 
     from blog import register_blueprint, add_url_rule
