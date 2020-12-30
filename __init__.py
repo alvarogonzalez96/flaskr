@@ -34,4 +34,7 @@ def create_app(self, test_config=None):
     
     return app
 
-    
+@app.route('/')
+def home():
+    return render_template('blog/home.html')
+
