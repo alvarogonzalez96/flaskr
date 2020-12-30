@@ -24,11 +24,11 @@ def create_app(self, test_config=None):
 
     from db import init_app
     init_app(app)
-    
+
     import auth
     app.register_blueprint(auth.bp)
 
-    from blog import register_blueprint, add_url_rule
+    import blog
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
