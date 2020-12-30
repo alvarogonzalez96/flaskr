@@ -35,3 +35,4 @@ def create_app(self, test_config=None):
     return app
 
 app = create_app()
+app.run()
