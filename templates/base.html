@@ -10,11 +10,6 @@
     {% if g.user %}
       <li><span>{{ g.user['username'] }}</span>
       <li><a href="{{ url_for('auth.logout') }}" id="logout">Log Out</a>
-      <script type="text/javascript">
-        $( "#logout" ).click(function() {
-          alert( "Handler for .click() called." );
-        });
-      </script>
     {% else %}
       <li><a href="{{ url_for('auth.register') }}">Register</a>
       <li><a href="{{ url_for('auth.login') }}">Log In</a>

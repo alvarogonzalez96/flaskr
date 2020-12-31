@@ -4,19 +4,74 @@
   {% if g.user %}
     <a class="action" href="{{ url_for('blog.create') }}">New</a>
   {% endif %}
+  <style type="text/css">
+    #menufind {
+      width: 500px;
+      margin: 0 auto;
+    }
+    #menufind>ul>li {
+      float: left;
+    }
+    #menufind>ul>li a {
+      display: block;
+      width: 100px;
+      height: 50px;
+      background: green;
+      text-align: center;
+      line-height: 50px
+    }
+    #menufind>ul>li>ul {
+        display: none
+    }
+    #menufind>ul>li>ul>li {
+        position: relative
+    }
+    #menufind>ul>li>ul>li>a {
+        background: red
+    }
+    #menufind>ul>li>ul>li>ul {
+        position: absolute;
+        left: 100px;
+        top: 0;
+        display: none
+    }
+    #menufind>ul>li>ul>li>ul a {
+        background: #ff0
+    }
+    #menufind ul {
+        list-style: none;
+        margin: 0;
+        padding: 0
+    }
+  </style>
 {% endblock %}
 
 {% block content %}
-  <div class="menuCSS3">
+  <div class="menufind">
     <ul>
-      <li>Name</li>
+      <li>Name</li> 
         <ul>
           {% for post in posts %}
-          <li> <a href="{{ url_for('blog.post', id=post['id']) }}">{{ post['title'] }}</a> </li>
+          <li><a href="{{ url_for('blog.post', id=post['id']) }}">{{ post['title'] }}</a></li>
           {% endfor %}
-        </ul>  
+        </ul>
+      <li><a href="">Author</a></li>
     </ul>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $menu = $('#menu').find('ul').find('li');
+
+        $menu.hover(function() {
+            $(this).children('ul').stop();
+            $(this).children('ul').slideDown();
+        }, function() {
+            $(this).children('ul').stop();
+            $(this).children('ul').slideUp();
+        });
+    });
+    </script>
   {% for post in posts %}
     <article class="post">
       <header>
