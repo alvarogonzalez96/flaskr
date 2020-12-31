@@ -85,7 +85,7 @@ def create():
 def get_file(filename):
     return send_from_directory(current_app.config["UPLOAD_FOLDER"], filename)
 
-def get_post(id):
+def get_post(id, check_author=False):
     post = get_db().execute(
         'SELECT p.id, title, body, created, author_id, username, address, size, price, url, image'
         ' FROM post p JOIN user u ON p.author_id = u.id'
