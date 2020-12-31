@@ -38,8 +38,8 @@ def search(title):
     db = get_db()
     posts = db.execute(
         'SELECT p.id, title, body, created, author_id, username, address, size, price, url, image'
-        ' FROM post WHERE title = ?'
-        ' ORDER BY created DESC',
+        ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' WHERE p.title = ?',
         (title)
     ).fetchall()
 
