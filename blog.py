@@ -30,7 +30,6 @@ def index():
     users = db.execute(
         'SELECT u.id, email, username'
         ' FROM user u'
-        ' ORDER BY created DESC'
     ).fetchall()
     return render_template('blog/index.html', posts=posts, users=users)
 
