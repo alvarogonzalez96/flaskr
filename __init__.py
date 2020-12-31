@@ -7,7 +7,7 @@ UPLOAD_FOLDER = os.path.abspath("./flaskr/static/images/")
 
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
 
-def create_app(self, test_config=None):
+def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
