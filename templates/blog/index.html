@@ -53,11 +53,11 @@
   </style>
 
   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <button onclick="myFunction()" class="dropbtn">Search</button>
     <div id="myDropdown" class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+        {% for post in posts %}
+        <a href="{{ url_for('blog.post', id=post['id']) }}">{{ post['title'] }}</a> 
+        {% endfor %}
     </div>
   </div>
 
