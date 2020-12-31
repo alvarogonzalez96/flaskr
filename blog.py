@@ -29,19 +29,6 @@ def index():
     ).fetchall()
     return render_template('blog/index.html', posts=posts)
 
-@bp.route('/search')
-def search(title):
-    db = get_db()
-    posts = db.execute(
-        'SELECT p.id, title, body, created, author_id, username, address, size, price, url, image'
-        ' FROM post p JOIN user u ON p.author_id = u.id'
-        ' WHERE p.title = ?',
-        (title)
-    ).fetchall()
-
-    return render_template('blog/search.html', posts=posts)
-
-
 @bp.route('/about')
 def about():
     return render_template('blog/about.html')

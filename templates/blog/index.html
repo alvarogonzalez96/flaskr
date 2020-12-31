@@ -56,7 +56,7 @@
     <button onclick="myFunction()" class="dropbtn">Search</button>
     <div id="myDropdown" class="dropdown-content">
         {% for post in posts %}
-        <a href="{{ url_for('blog.search', title=post['title']) }}">{{ post['title'] }}</a>  
+        <a href="{{ url_for('blog.post', id=post['id']) }}">{{ post['title'] }}</a>  
         {% endfor %}
     </div>
   </div>
