@@ -12,9 +12,7 @@
       <li>Name</li>
         <ul>
           {% for post in posts %}
-          <li>HOLa</li>
-          <li>HEY</li>
-          <li><a href="{{ url_for('blog.post', id=post['id']) }}"><{{ post['title'] }}</a></li>
+          <li> <a href="{{ url_for('blog.post', id=post['id']) }}">{{ post['title'] }}</a> </li>
           {% endfor %}
         </ul>  
     </ul>
