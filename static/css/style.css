@@ -382,4 +382,8 @@
 	input[type=submit] {
 	 align-self: start; min-width: 10em; 
 	}
+
+	$( "#target" ).click(function() {
+  		alert( "Handler for .click() called." );
+	});
 }
