@@ -85,7 +85,7 @@ def create():
 def get_file(filename):
     return send_from_directory(current_app.config["UPLOAD_FOLDER"], filename)
 
-def get_post(id, check_author=True):
+def get_post(id):
     post = get_db().execute(
         'SELECT p.id, title, body, created, author_id, username, address, size, price, url, image'
         ' FROM post p JOIN user u ON p.author_id = u.id'
@@ -153,7 +153,6 @@ def delete(id):
     return redirect(url_for('blog.index'))
 
 @bp.route('/post/<int:id>/', methods=('GET', 'POST'))
-@login_required
 def post(id):
     post=get_post(id)
     return render_template('blog/post.html', post=post)
