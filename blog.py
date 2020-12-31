@@ -4,8 +4,8 @@ from flask import (
 from werkzeug.exceptions import abort
 from werkzeug.utils import secure_filename
 
-import auth
-import db
+from auth import login_required
+from db import get_db
 
 
 
