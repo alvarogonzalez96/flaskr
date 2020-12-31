@@ -46,8 +46,6 @@
     }
   </style>
 {% endblock %}
-
-{% block content %}
   <nav id="menufind">
         <ul>
             <li><a href="#">Name</a>
@@ -81,6 +79,9 @@
         });
     });
     </script>
+{% block content %}
+  
+
   {% for post in posts %}
     <article class="post">
       <header>
