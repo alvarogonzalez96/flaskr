@@ -28,13 +28,13 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    from db import init_app
-    init_app(app)
+    from . import db
+    db.init_app(app)
 
-    import auth
+    from . import auth
     app.register_blueprint(auth.bp)
 
-    import blog
+    from . import blog
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
