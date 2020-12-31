@@ -58,30 +58,11 @@
                     {% endfor %}
                 </ul>
             </li>
-            <li><a href="#">Fugiat!</a>
-            </li>
-            <li><a href="#">Fuga.</a>
-            </li>
-            <li><a href="#">Ea.</a>
+            <li><a href="#">Author</a>
                 <ul>
-                    <li><a href="#">Lorem.</a>
-                    </li>
-                    <li><a href="#">At.</a>
-                    </li>
-                    <li><a href="#">Ratione?</a>
-                    </li>
-                    <li><a href="#">Optio.</a>
-                        <ul>
-                            <li><a href="#">Lorem.</a>
-                            </li>
-                            <li><a href="#">Voluptas!</a>
-                            </li>
-                            <li><a href="#">Error?</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Asperiores.</a>
-                    </li>
+                    {% for user in users %}
+                    <li><a href="">{{ user['username'] }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
         </ul>
