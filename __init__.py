@@ -3,7 +3,7 @@ import os
 from flask import Flask
 
 
-UPLOAD_FOLDER = os.path.abspath('https://oravla.herokuapp.com/static/images/')
+UPLOAD_FOLDER = os.path.abspath("./static/images/")
 
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
 
