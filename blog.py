@@ -38,8 +38,9 @@ def search(title):
     db = get_db()
     posts = db.execute(
         'SELECT p.id, title, body, created, author_id, username, address, size, price, url, image'
-        ' FROM post p WHERE p.title=title'
-        ' ORDER BY created DESC'
+        ' FROM post WHERE title = ?'
+        ' ORDER BY created DESC',
+        (title)
     ).fetchall()
 
     return render_template('blog/search.html', posts=posts)
