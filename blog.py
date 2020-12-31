@@ -27,11 +27,7 @@ def index():
         ' FROM post p JOIN user u ON p.author_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
-    users = db.execute(
-        'SELECT u.id, email, username'
-        ' FROM user u'
-    ).fetchall()
-    return render_template('blog/index.html', posts=posts, users=users)
+    return render_template('blog/index.html', posts=posts)
 
 @bp.route('/search')
 def search(title):
