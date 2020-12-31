@@ -3,7 +3,7 @@ import os
 from flask import Flask
 
 
-UPLOAD_FOLDER = os.path.abspath("images/")
+UPLOAD_FOLDER = os.path.abspath("./fl/static/images/")
 
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpge", "jpeg"])
 
