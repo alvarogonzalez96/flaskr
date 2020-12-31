@@ -45,10 +45,7 @@
         padding: 0
     }
   </style>
-{% endblock %}
-
-{% block content %}
-  <div>
+    <div>
     <nav id="menufind">
           <ul>
               <li><a href="#">Name</a>
@@ -83,7 +80,9 @@
       });
       </script>
   </div>
-  <hr>
+{% endblock %}
+
+{% block content %}
   <div>
     {% for post in posts %}
         <article class="post">
