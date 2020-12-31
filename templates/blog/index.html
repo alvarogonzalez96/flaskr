@@ -7,17 +7,17 @@
 {% endblock %}
 
 {% block content %}
+  <nav class="menuCSS3">
+    <ul>
+      <li>Name</li>
+        <ul>
+          {% for post in posts %}
+          <li><a href="{{ url_for('blog.post', id=post['id']) }}"><{{ post['title'] }}</a></li>
+          {% endfor %}
+        </ul>  
+    </ul>
+  </nav>
   {% for post in posts %}
-    <nav class="menuCSS3">
-      <ul>
-        <li>Name</li>
-          <ul>
-            {% for post in posts %}
-            <li><a href="{{ url_for('blog.post', id=post['id']) }}"><{{ post['title'] }}</a></li>
-            {% endfor %}
-          </ul>  
-      </ul>
-    </nav>
     <article class="post">
       <header>
         <div>
