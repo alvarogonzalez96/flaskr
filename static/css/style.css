@@ -383,7 +383,7 @@
 	 align-self: start; min-width: 10em; 
 	}
 
-	$( "#target" ).click(function() {
+	$( "#logout" ).click(function() {
   		alert( "Handler for .click() called." );
 	});
 }
