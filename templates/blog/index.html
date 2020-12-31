@@ -62,9 +62,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
     $(document).ready(function() {
-        $menu = $('#menufind').find('ul').find('li');
+        $menufinder = $('#menufind').find('ul').find('li');
 
-        $menu.hover(function() {
+        $menufinder.hover(function() {
             $(this).children('ul').stop();
             $(this).children('ul').slideDown();
         }, function() {
