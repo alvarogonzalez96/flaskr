@@ -14,6 +14,7 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY=b'\xa1\xbb\xaa\xbe\x15\xa2\x97\x8ccf\xdePsO"\xdc',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        DATABASE_URL=postgres://wgjbgtgvsfgiry:1315c10416ac9f81bf05dcb76088d13c7516f8fe72a88395a4df08fa3ed1ffe2@ec2-52-200-16-99.compute-1.amazonaws.com:5432/dfptf64v0a8hiv,
     )
 
     if test_config is None:
